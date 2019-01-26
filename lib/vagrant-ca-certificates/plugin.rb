@@ -44,6 +44,11 @@ module VagrantPlugins
         Cap::Windows::UpdateCertificateBundle
       end
 
+      guest_capability('suse', 'update_certificate_bundle') do
+        require_relative 'cap/suse/update_certificate_bundle'
+        Cap::Suse::UpdateCertificateBundle
+      end
+
       guest_capability('debian', 'certificate_upload_path') do
         require_relative 'cap/debian/certificate_upload_path'
         Cap::Debian::CertificateUploadPath
@@ -64,6 +69,11 @@ module VagrantPlugins
         Cap::Windows::CertificateUploadPath
       end
 
+      guest_capability('suse', 'certificate_upload_path') do
+        require_relative 'cap/suse/certificate_upload_path'
+        Cap::Suse::CertificateUploadPath
+      end
+
       guest_capability('debian', 'certificate_file_bundle') do
         require_relative 'cap/debian/certificate_file_bundle'
         Cap::Debian::CertificateFileBundle
@@ -82,6 +92,11 @@ module VagrantPlugins
       guest_capability('windows', 'certificate_file_bundle') do
         require_relative 'cap/windows/certificate_file_bundle'
         Cap::Windows::CertificateFileBundle
+      end
+
+      guest_capability('suse', 'certificate_file_bundle') do
+        require_relative 'cap/suse/certificate_file_bundle'
+        Cap::Suse::CertificateFileBundle
       end
     end
   end
